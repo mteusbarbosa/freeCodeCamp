@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../CSS/survey.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="title">freeCodeCamp Survey Form</h1>
+    <p id="description">
+      Thank you for taking the time to help us improve the platform
+    </p>
+
+    <form id="survey-form" action="">
+      <fieldset>
+        <legend></legend>
+        <label id="name-label" for=""
+          >Name<input
+            id="name"
+            type="text"
+            placeholder="Enter your name"
+            required
+        /></label>
+        <label id="email-label" for=""
+          >Email<input
+            type="email"
+            id="email"
+            placeholder="Enter your Email"
+            required
+        /></label>
+        <label id="number-label" for=""
+          >Age (optional)<input
+            type="number"
+            id="number"
+            min="0"
+            max="120"
+            placeholder="Age"
+        /></label>
+        <label for=""
+          >Which option best describes your current role?<select id="dropdown">
+            <option value="">Select current role</option>
+            <option value="1">Student</option>
+            <option value="2">Full time job</option>
+          </select></label
+        >
+        <label for="">Wold you recommend freeCodeCamp to a friend?
+        <label for=""
+          ><input
+            type="radio"
+            name="recomment"
+            id=""
+            value="definitely"
+          />Definitely</label
+        >
+        <label for=""
+          ><input
+            type="radio"
+            name="recomment"
+            id=""
+            value="maybe"
+          />Maybe</label
+        ></label>
+        <label for=""
+          ><input type="radio" name="recomment" id="" value="not-sure" />Not
+          sure</label
+        >
+        <label for=""
+          ><input type="checkbox" name="" id="" value="front-end" />Front-end
+          Projects</label
+        >
+        <label for=""
+          ><input type="checkbox" name="" id="" value="back-end" />Back-end
+          Projects</label
+        >
+
+        <label for="">Any comments or suggestions?<textarea name="" id="" cols="30" rows="10"></textarea></label>
+      </fieldset>
+      <input type="submit" id="submit" value="submit" />
+    </form>
+  </body>
+</html>
