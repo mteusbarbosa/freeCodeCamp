@@ -531,21 +531,21 @@ const names = ["Hole-in-one!", "Eagle", "Birdie", "Par", "Bogey", "Double Bogey"
 
 function golfScore(par, strokes) {
   // Only change code below this line
-if (strokes == 1){
-  return names[0];
-} else if(strokes <= par -2){
-  return names[1];
-} else if(strokes == par -1){
-  return names[2];
-} else if(strokes == par){
-  return names[3];
-} else if(strokes == par + 1){
-  return names[4];
-} else if(strokes == par + 2){
-  return names[5];
-} else {
-  return names[6];
-}
+  if (strokes == 1) {
+    return names[0];
+  } else if (strokes <= par - 2) {
+    return names[1];
+  } else if (strokes == par - 1) {
+    return names[2];
+  } else if (strokes == par) {
+    return names[3];
+  } else if (strokes == par + 1) {
+    return names[4];
+  } else if (strokes == par + 2) {
+    return names[5];
+  } else {
+    return names[6];
+  }
 }
 
 golfScore(5, 4);
@@ -554,18 +554,18 @@ golfScore(5, 4);
 function switchOfStuff(val) {
   let answer = "";
   switch (val) {
-  case "a":
-    answer = "apple";
-    break;
-  case "b":
-    answer = "bird";
-    break;
-  case "c":
-    answer = "cat";
-    break;
-  default:
-    answer = "stuff";
-    break;
+    case "a":
+      answer = "apple";
+      break;
+    case "b":
+      answer = "bird";
+      break;
+    case "c":
+      answer = "cat";
+      break;
+    default:
+      answer = "stuff";
+      break;
   }
   return answer;
 }
@@ -575,14 +575,14 @@ switchOfStuff(1);
 //Multiple Identical Options in Switch Statements
 function sequentialSizes(val) {
   let answer = "";
-  switch(val){
+  switch (val) {
     case 1:
     case 2:
     case 3:
       answer = "Low";
       break;
     case 4:
-    case 5: 
+    case 5:
     case 6:
       answer = "Mid";
       break;
@@ -601,7 +601,7 @@ sequentialSizes(1);
 function chainToSwitch(val) {
   let answer = "";
   // Only change code below this line
-  switch (val){
+  switch (val) {
     case "bob":
       answer = "Marley";
       break;
@@ -633,3 +633,422 @@ function isLess(a, b) {
 
 isLess(10, 15);
 
+//Return Early Pattern for Functions
+function abTest(a, b) {
+  if (a < 0 || b < 0) {
+    return undefined;
+  }
+
+  return Math.round(Math.pow(Math.sqrt(a) + Math.sqrt(b), 2));
+}
+
+abTest(2, 2);
+
+//Counting Cards
+let count = 0;
+
+function cc(card) {
+  // Only change code below this line
+
+  switch (card) {
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+    case 6:
+      count++;
+      break;
+    case 10:
+    case "J":
+    case "Q":
+    case "K":
+    case "A":
+      count--;
+      break;
+  }
+
+  let holdbet = 'Hold';
+  if (count > 0) {
+    holdbet = 'Bet'
+  }
+
+  return count + " " + holdbet;
+}
+
+cc(2); cc(3); cc(7); cc('K'); cc('A');
+
+//Build JavaScript Objects
+const myDog = {
+  "name": "Brbz",
+  "legs": 3,
+  "tails": 1,
+  "friends": ["Lulz", "Bob"]
+};
+
+//Accessing Object Properties with Dot Notation
+
+const testObj = {
+  "hat": "ballcap",
+  "shirt": "jersey",
+  "shoes": "cleats"
+};
+
+// Only change code below this line
+const hatValue = testObj.hat;      // Change this line
+const shirtValue = testObj.shirt;    // Change this line
+
+//Accessing Object Properties with Bracket Notation
+const testObj1 = {
+  "an entree": "hamburger",
+  "my side": "veggies",
+  "the drink": "water"
+};
+
+const entreeValue = testObj1["an entree"];
+const drinkValue = testObj1["the drink"];
+
+//Accessing Object Properties with Variables
+const testObj2 = {
+  12: "Namath",
+  16: "Montana",
+  19: "Unitas"
+};
+
+const playerNumber = 16;
+const player = testObj2[playerNumber];
+
+//Updating Object Properties
+const myDog2 = {
+  "name": "Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"]
+};
+myDog2.name = "Happy Coder";
+
+//Add New Properties to a JavaScript Object
+const myDog3 = {
+  "name": "Happy Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"]
+};
+myDog3.bark = "woof";
+
+//Delete Properties from a JavaScript Object
+const myDog4 = {
+  "name": "Happy Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"],
+  "bark": "woof"
+};
+delete myDog4.tails;
+
+//Using Objects for Lookups
+function phoneticLookup(val) {
+  let result = "";
+
+  // Only change code below this line
+  let lookup = {
+    "alpha": "Adams",
+    "bravo": "Boston",
+    "charlie": "Chicago",
+    "delta": "Denver",
+    "echo": "Easy",
+    "foxtrot": "Frank"
+  };
+  result = lookup[val];
+
+  // Only change code above this line
+  return result;
+}
+
+phoneticLookup("charlie");
+
+//Testing Objects for Properties
+function checkObj(obj, checkProp) {
+  if (obj.hasOwnProperty(checkProp)) {
+    return obj[checkProp];
+  } else {
+    return "Not Found";
+  }
+}
+
+//Manipulating Complex Objects
+const myMusic = [
+  {
+    "artist": "Billy Joel",
+    "title": "Piano Man",
+    "release_year": 1973,
+    "formats": [
+      "CD",
+      "8T",
+      "LP"
+    ],
+    "gold": true
+  },
+  {
+    "artist": "Mateus Barbosa",
+    "title": "Programmer",
+    "release_year": 1996,
+    "formats": [
+      "HTML",
+      "CSS",
+      "JS"
+    ]
+  }
+];
+
+//Accessing Nested Objects
+const myStorage = {
+  "car": {
+    "inside": {
+      "glove box": "maps",
+      "passenger seat": "crumbs"
+    },
+    "outside": {
+      "trunk": "jack"
+    }
+  }
+};
+
+const gloveBoxContents = myStorage.car.inside["glove box"];
+
+//Accessing Nested Arrays
+const myPlants = [
+  {
+    type: "flowers",
+    list: [
+      "rose",
+      "tulip",
+      "dandelion"
+    ]
+  },
+  {
+    type: "trees",
+    list: [
+      "fir",
+      "pine",
+      "birch"
+    ]
+  }
+];
+
+const secondTree = myPlants[1].list[1];
+
+//Record Collection
+const recordCollection = {
+  2548: {
+    albumTitle: 'Slippery When Wet',
+    artist: 'Bon Jovi',
+    tracks: ['Let It Rock', 'You Give Love a Bad Name']
+  },
+  2468: {
+    albumTitle: '1999',
+    artist: 'Prince',
+    tracks: ['1999', 'Little Red Corvette']
+  },
+  1245: {
+    artist: 'Robert Palmer',
+    tracks: []
+  },
+  5439: {
+    albumTitle: 'ABBA Gold'
+  }
+};
+
+// Only change code below this line
+function updateRecords(records, id, prop, value) {
+  if (prop !== 'tracks' && value !== "") {
+    records[id][prop] = value;
+  } else if (prop === "tracks" && records[id].hasOwnProperty("tracks") === false) {
+    records[id][prop] = [value];
+  } else if (prop === "tracks" && value !== "") {
+    records[id][prop].push(value);
+  } else if (value === "") {
+    delete records[id][prop];
+  }
+  return records;
+}
+
+updateRecords(recordCollection, 5439, 'artist', 'ABBA');
+
+// Iterate with JavaScript While Loops
+const myArray10 = [];
+let i = 5;
+
+while (i >= 0) {
+  myArray10.push(i);
+  i--;
+}
+
+//Iterate with JavaScript For Loops
+const myArray11 = [];
+
+for (let i = 1; i <= 5; i++) {
+  myArray11.push(i);
+}
+
+//Iterate Odd Numbers With a For Loop
+const myArray12 = [];
+
+for (let i = 1; i <= 9; i += 2) {
+  myArray12.push(i);
+}
+
+//Count Backwards With a For Loop
+const myArray13 = [];
+
+for (let i = 9; i > 0; i -= 2) {
+  myArray13.push(i);
+}
+
+//Iterate Through an Array with a For Loop
+const myArr = [2, 3, 4, 5, 6];
+let total = 0;
+
+for (const element of myArr) {
+  total += element;
+}
+
+//Nesting For Loops
+function multiplyAll(arr) {
+  let product = 1;
+  // Only change code below this line
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr[i].length; j++) {
+      product *= arr[i][j];
+    }
+  }
+  // Only change code above this line
+  return product;
+}
+
+multiplyAll([[1, 2], [3, 4], [5, 6, 7]]);
+
+//Iterate with JavaScript Do...While Loops
+const myArray14 = [];
+let i2 = 10;
+
+// Only change code below this line
+do{
+  myArray14.push(i2);
+  i2++;
+} while (i2 < 5) {
+}
+
+//Replace Loops using Recursion
+function sum(arr, n) {
+  if (n <= 0) {
+    return 0;
+  } else {
+    return sum(arr, n - 1) + arr[n - 1];
+  }
+}
+
+//Profile Lookup
+const contacts = [
+  {
+    firstName: "Akira",
+    lastName: "Laine",
+    number: "0543236543",
+    likes: ["Pizza", "Coding", "Brownie Points"],
+  },
+  {
+    firstName: "Harry",
+    lastName: "Potter",
+    number: "0994372684",
+    likes: ["Hogwarts", "Magic", "Hagrid"],
+  },
+  {
+    firstName: "Sherlock",
+    lastName: "Holmes",
+    number: "0487345643",
+    likes: ["Intriguing Cases", "Violin"],
+  },
+  {
+    firstName: "Kristian",
+    lastName: "Vos",
+    number: "unknown",
+    likes: ["JavaScript", "Gaming", "Foxes"],
+  },
+];
+
+function lookUpProfile(name, prop) {
+  for (let i = 0; i < contacts.length; i++) {
+    if (contacts[i].firstName === name) {
+        return contacts[i][prop] || "No such property";
+    }
+  } return "No such contact";
+}
+// Only change code above this line
+
+lookUpProfile("Akira", "likes");
+
+//Random number
+function randomFraction() {
+  return Math.random();
+}
+
+//Generate Random Whole Numbers with JavaScript
+function randomWholeNum() {
+  return Math.floor(Math.random() * 10);
+}
+
+//Generate Random Whole Numbers within a Range
+function randomRange(myMin, myMax) {
+  return Math.floor(Math.random() * (myMax - myMin + 1)) + myMin
+}
+
+//Use the parseInt Function
+function convertToInteger(str) {
+  return parseInt(str);
+}
+
+convertToInteger("56");
+
+//Use the parseInt Function with a Radix
+function convertToInteger(str) {
+  return parseInt(str, 2);
+}
+
+convertToInteger("10011");
+
+//Use the Conditional (Ternary) Operator
+function checkEqual(a, b) {
+  return a === b ? "Equal" : "Not Equal";
+}
+
+checkEqual(1, 2);
+
+//Use Multiple Conditional (Ternary) Operators
+function checkSign(num) {
+  return (num < 0) ? "negative" : (num === 0) ? "zero" : "positive";
+}
+
+checkSign(10);
+
+//Use Recursion to Create a Countdown
+function countdown(n) {
+  if (n < 1) {
+    return [];
+  } else {
+    const arr = countdown(n - 1);
+    arr.unshift(n);
+    return arr;
+  }
+}
+
+//Use Recursion to Create a Range of Numbers
+function rangeOfNumbers(startNum, endNum) {
+  if (startNum > endNum) {
+    return [];
+  }else{
+    const arr = rangeOfNumbers((startNum +1), endNum);
+    arr.unshift(startNum);
+    return arr;
+  }
+};
+
+//
